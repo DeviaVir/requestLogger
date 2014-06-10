@@ -16,6 +16,7 @@ $app->match('{url}',
 
 		$logger->log(
 			Zend\Log\Logger::INFO, 
+			'IP:' . $request->getClientIp() . ';' . 
 			'GET:' . json_encode($request->query->all()) . ';' .
 			'POST:' . json_encode($request->request->all()) . ';'
 		);

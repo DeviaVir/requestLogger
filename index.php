@@ -18,7 +18,8 @@ $app->match('{url}',
 			Zend\Log\Logger::INFO, 
 			'IP:' . $request->getClientIp() . ';' . 
 			'GET:' . json_encode($request->query->all()) . ';' .
-			'POST:' . json_encode($request->request->all()) . ';'
+			'POST:' . json_encode($request->request->all()) . ';' .
+			'INPUT:' . json_encode(file_get_contents('php://input')) . ';'
 		);
 
         return 'OK';
